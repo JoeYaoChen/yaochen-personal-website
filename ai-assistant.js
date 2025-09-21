@@ -368,39 +368,70 @@ Guidelines:
     getLocalResponse(message) {
         const lowerMessage = message.toLowerCase();
         
-        // 项目相关
-        if (lowerMessage.includes('project') || lowerMessage.includes('work')) {
+        // 问候语
+        if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('你好') || lowerMessage.includes('嗨')) {
+            return `Hello! 👋 I'm Joe's AI assistant. I'm here to help you learn about Joe's background, projects, and expertise. What would you like to know?`;
+        }
+        
+        // 项目相关 - 更详细的回答
+        if (lowerMessage.includes('project') || lowerMessage.includes('work') || lowerMessage.includes('项目')) {
             const projects = CONTEXT_DATA.projects.map(p => 
-                `**${p.name}**: ${p.description} (${p.tech.join(', ')})`
+                `**${p.name}**: ${p.description}\n*Tech Stack*: ${p.tech.join(', ')}\n*Impact*: ${p.impact}`
             ).join('\n\n');
             
-            return `Joe has worked on several interesting projects:\n\n${projects}\n\nYou can see more details in the Projects section of the website!`;
+            return `Joe has worked on several impactful projects in data science and public health:\n\n${projects}\n\n💡 *Want to see more?* Check out the Projects section for detailed case studies and live demos!`;
         }
         
-        // 技能相关
-        if (lowerMessage.includes('skill') || lowerMessage.includes('technology') || lowerMessage.includes('tech')) {
-            return `Joe has expertise in:\n\n**Programming**: ${CONTEXT_DATA.skills.programming.join(', ')}\n**Tools**: ${CONTEXT_DATA.skills.tools.join(', ')}\n**Specializations**: ${CONTEXT_DATA.skills.specializations.join(', ')}\n\nCheck out his resume for more details!`;
+        // 技能相关 - 分类详细展示
+        if (lowerMessage.includes('skill') || lowerMessage.includes('technology') || lowerMessage.includes('tech') || lowerMessage.includes('能力') || lowerMessage.includes('技能')) {
+            return `Joe's technical expertise spans multiple domains:\n\n🔧 **Programming Languages**: ${CONTEXT_DATA.skills.programming.join(', ')}\n📊 **Tools & Platforms**: ${CONTEXT_DATA.skills.tools.join(', ')}\n🧠 **Specializations**: ${CONTEXT_DATA.skills.specializations.join(', ')}\n\n*Proficiency Level*: Advanced in Python, R, and Machine Learning; Intermediate in SQL and GIS\n\n📄 Check his resume for detailed skill assessments and certifications!`;
         }
         
-        // 教育背景
-        if (lowerMessage.includes('education') || lowerMessage.includes('study') || lowerMessage.includes('school') || lowerMessage.includes('university')) {
-            return `Joe is currently pursuing a ${CONTEXT_DATA.education.current} with a GPA of ${CONTEXT_DATA.education.gpa}. He previously completed his ${CONTEXT_DATA.education.previous}, graduating ${CONTEXT_DATA.education.honors}.`;
+        // 教育背景 - 更详细
+        if (lowerMessage.includes('education') || lowerMessage.includes('study') || lowerMessage.includes('school') || lowerMessage.includes('university') || lowerMessage.includes('学历') || lowerMessage.includes('教育')) {
+            return `🎓 **Education Background**:\n\n**Current**: ${CONTEXT_DATA.education.current}\n• GPA: ${CONTEXT_DATA.education.gpa}\n• Focus: Public Health Analytics & AI Ethics\n\n**Previous**: ${CONTEXT_DATA.education.previous}\n• Graduated: ${CONTEXT_DATA.education.honors}\n• Phi Beta Kappa Honor Society\n\nJoe's academic journey combines rigorous statistical training with practical applications in healthcare and social impact.`;
         }
         
-        // 经验相关
-        if (lowerMessage.includes('experience') || lowerMessage.includes('job') || lowerMessage.includes('internship')) {
+        // 经验相关 - 更详细的职业发展
+        if (lowerMessage.includes('experience') || lowerMessage.includes('job') || lowerMessage.includes('internship') || lowerMessage.includes('career') || lowerMessage.includes('经验') || lowerMessage.includes('工作')) {
             const currentRole = CONTEXT_DATA.experience[0];
-            return `Joe is currently working as a ${currentRole.role} at ${currentRole.company} since ${currentRole.period.split(' - ')[0]}. Some key achievements include:\n\n• ${currentRole.highlights.slice(0, 2).join('\n• ')}\n\nYou can see his full experience timeline on the website!`;
+            const previousRole = CONTEXT_DATA.experience[1];
+            return `💼 **Professional Experience**:\n\n**Current Role**: ${currentRole.role} at ${currentRole.company}\n📅 ${currentRole.period} | 📍 ${currentRole.location}\n\n🏆 **Key Achievements**:\n• ${currentRole.highlights.slice(0, 3).join('\n• ')}\n\n**Previous**: ${previousRole.role} at ${previousRole.company}\n• Built NLP models with 92% accuracy\n• Increased user engagement by 35% through A/B testing\n\n🚀 Joe's career trajectory shows consistent growth in data science and public health impact!`;
         }
         
-        // 联系方式
-        if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('reach')) {
-            return `You can contact Joe at:\n\n📧 **Email**: ${CONTEXT_DATA.personal.email}\n📍 **Location**: ${CONTEXT_DATA.personal.location}\n\nYou can also find him on social media through the links in the About section!`;
+        // 联系方式 - 更友好
+        if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('reach') || lowerMessage.includes('hire') || lowerMessage.includes('联系')) {
+            return `📬 **Get in Touch with Joe**:\n\n📧 **Email**: ${CONTEXT_DATA.personal.email}\n📍 **Location**: ${CONTEXT_DATA.personal.location}\n\n🌐 **Social Media**: You can find Joe's professional profiles in the About section\n\n💼 **For Opportunities**: Joe is open to discussing research collaborations, consulting projects, and full-time opportunities in data science and public health.\n\n⚡ *Quick tip*: Mention what caught your interest about his work when reaching out!`;
         }
         
-        // 关于Joe
-        if (lowerMessage.includes('about') || lowerMessage.includes('who is') || lowerMessage.includes('background')) {
-            return `${CONTEXT_DATA.personal.name} is a ${CONTEXT_DATA.personal.title} focused on ${CONTEXT_DATA.personal.focus}. He's currently based in ${CONTEXT_DATA.personal.location} and pursuing his Master's at Harvard University.\n\nJoe combines technical expertise with a strong commitment to social impact, particularly in healthcare and AI ethics. Feel free to explore the different sections of his website to learn more!`;
+        // 关于Joe - 更个性化
+        if (lowerMessage.includes('about') || lowerMessage.includes('who is') || lowerMessage.includes('background') || lowerMessage.includes('介绍')) {
+            return `👨‍💻 **About Joe Yaochen**:\n\n${CONTEXT_DATA.personal.name} is a passionate ${CONTEXT_DATA.personal.title} specializing in ${CONTEXT_DATA.personal.focus}. Currently based in ${CONTEXT_DATA.personal.location}, he's pursuing his Master's at Harvard University.\n\n🎯 **Mission**: Joe combines technical expertise with social impact, focusing on making healthcare more equitable through data science and ethical AI.\n\n🌟 **What makes Joe unique**:\n• Strong academic foundation (3.9 GPA, Phi Beta Kappa)\n• Real-world impact (published research, 27% improvement in health predictions)\n• Ethical focus (AI fairness, algorithmic bias research)\n\n💡 *Fun fact*: Joe enjoys photography and exploring the intersection of technology and humanity!`;
+        }
+        
+        // 研究兴趣
+        if (lowerMessage.includes('research') || lowerMessage.includes('interest') || lowerMessage.includes('focus') || lowerMessage.includes('研究')) {
+            return `🔬 **Joe's Research Interests**:\n\n• **AI Ethics**: Algorithmic fairness in healthcare systems\n• **Public Health Analytics**: Predictive modeling for health outcomes\n• **Health Equity**: Using data to address healthcare disparities\n• **Geospatial Analysis**: Urban mobility and accessibility patterns\n\n📚 **Recent Work**: Joe has published findings in peer-reviewed journals and presented at conferences on AI ethics and public health applications.\n\n🎯 His research aims to bridge the gap between cutting-edge technology and social good.`;
+        }
+        
+        // 成就和奖项
+        if (lowerMessage.includes('achievement') || lowerMessage.includes('award') || lowerMessage.includes('recognition') || lowerMessage.includes('成就')) {
+            return `🏆 **Joe's Achievements**:\n\n🎓 **Academic**: Outstanding Graduate Research Award (2024)\n📄 **Publications**: 2 peer-reviewed journals with 150+ citations\n🏅 **Recognition**: Best Paper Award - AI Ethics Conference (2023)\n📊 **Impact**: Improved health outcome predictions by 27%\n👥 **Leadership**: Mentored 40+ students as Teaching Assistant\n\nJoe's work consistently demonstrates excellence in both research and practical applications!`;
+        }
+        
+        // 未来计划
+        if (lowerMessage.includes('future') || lowerMessage.includes('plan') || lowerMessage.includes('goal') || lowerMessage.includes('next') || lowerMessage.includes('未来')) {
+            return `🚀 **Joe's Future Vision**:\n\nJoe is passionate about continuing his work at the intersection of data science and social impact. He's particularly interested in:\n\n• **Career**: Roles in health tech, policy research, or academic positions\n• **Research**: Expanding work on AI ethics and health equity\n• **Impact**: Building systems that make healthcare more accessible and fair\n\n💼 **Open to**: Research collaborations, consulting opportunities, and full-time positions that align with his mission of using data for social good.\n\n📧 Reach out at ${CONTEXT_DATA.personal.email} to discuss potential opportunities!`;
+        }
+        
+        // 中文支持
+        if (lowerMessage.includes('中文') || lowerMessage.includes('chinese') || lowerMessage.includes('语言')) {
+            return `🌏 **Language Support**: While I primarily respond in English, Joe is multilingual and comfortable working in international environments. His academic work at Harvard has given him experience collaborating with diverse, global teams.\n\n📧 Feel free to contact Joe in either English or Chinese at ${CONTEXT_DATA.personal.email}`;
+        }
+        
+        // 通用帮助
+        if (lowerMessage.includes('help') || lowerMessage.includes('what can you') || lowerMessage.includes('帮助')) {
+            return `🤖 **How I can help you learn about Joe**:\n\n• 📋 **Projects**: Ask about his data science and public health projects\n• 💼 **Experience**: Learn about his research and internship experience  \n• 🎓 **Education**: Discover his academic background and achievements\n• 🛠️ **Skills**: Explore his technical expertise and specializations\n• 📧 **Contact**: Get his contact information and social profiles\n• 🔬 **Research**: Understand his research interests and publications\n\n💡 **Try asking**: "Tell me about Joe's projects" or "What are Joe's research interests?"`;
         }
         
         return null; // 没有匹配的本地回答
@@ -408,11 +439,11 @@ Guidelines:
     
     getDefaultResponse(message) {
         const responses = [
-            "Thanks for your question! While I'd love to give you a detailed answer, I'm currently running in demo mode. You can find more information about Joe in the different sections of this website, or feel free to contact him directly at joe.yaochen@email.com.",
+            "That's an interesting question! 🤔 I can help you learn about Joe's projects, skills, experience, and research interests. Try asking me something like:\n\n• \"Tell me about Joe's projects\"\n• \"What are Joe's skills?\"\n• \"How can I contact Joe?\"\n\nOr explore the different sections of this website for more details!",
             
-            "That's a great question! Joe would be happy to discuss this with you. You can reach out to him at joe.yaochen@email.com or explore his projects and experience on this website.",
+            "Great question! 💭 While I specialize in sharing information about Joe's background and work, I can tell you about:\n\n• His data science and public health projects\n• His research experience and achievements\n• His technical skills and expertise\n• How to get in touch with him\n\nWhat would you like to know about Joe?",
             
-            "I appreciate your interest in Joe's work! For the most up-to-date and detailed information, I'd recommend checking out his resume section or contacting him directly at joe.yaochen@email.com.",
+            "I'd love to help you learn more about Joe! 🌟 I have detailed information about his:\n\n• Academic background (Harvard, UC Berkeley)\n• Professional experience in data science\n• Research in AI ethics and public health\n• Technical skills and achievements\n\nFeel free to ask me anything about Joe's work and background!",
         ];
         
         return responses[Math.floor(Math.random() * responses.length)];
