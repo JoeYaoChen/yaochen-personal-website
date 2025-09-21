@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Yaochen - Data Science × Public Health</title>
+    <meta name="description" content="Data Science student exploring public health & AI ethics. Building data-driven projects and writing about fairness, mobility, and health.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Joe Yaochen - Data Science × Public Health">
+    <meta property="og:description" content="Data Science student exploring public health & AI ethics">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="Joe Yaochen - Data Science × Public Health">
+    <meta property="twitter:description" content="Data Science student exploring public health & AI ethics">
+    <meta property="twitter:image" content="">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Joe</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">首页</a>
+                <a href="#projects" class="nav-link" data-section="projects">项目</a>
+                <a href="#experience" class="nav-link" data-section="experience">经历</a>
+                <a href="#writing" class="nav-link" data-section="writing">写作</a>
+                <a href="#resume" class="nav-link" data-section="resume">简历</a>
+                <a href="#about" class="nav-link" data-section="about">关于</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Section -->
+        <section id="home" class="section section-home active">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Hi, I'm Joe</h1>
+                        <p class="hero-subtitle">Data Science × Public Health</p>
+                        <p class="hero-description">
+                            I build data-driven projects and write about fairness, mobility, and health.
+                        </p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" data-section="projects">View Projects</button>
+                            <button class="btn btn-secondary" data-section="resume">Download Resume</button>
+                        </div>
+                    </div>
+                    <div class="hero-carousel">
+                        <div class="carousel" id="hero-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-slide active">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face" alt="Joe's profile photo" />
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" alt="Joe working on data analysis" />
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="Joe presenting research" />
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&h=400&fit=crop" alt="Joe in Geneva" />
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-btn-prev" aria-label="Previous image">
+                                <i data-lucide="chevron-left"></i>
+                            </button>
+                            <button class="carousel-btn carousel-btn-next" aria-label="Next image">
+                                <i data-lucide="chevron-right"></i>
+                            </button>
+                            <div class="carousel-dots">
+                                <button class="carousel-dot active" data-slide="0"></button>
+                                <button class="carousel-dot" data-slide="1"></button>
+                                <button class="carousel-dot" data-slide="2"></button>
+                                <button class="carousel-dot" data-slide="3"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Projects -->
+                <div class="featured-section">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Data visualization dashboard" />
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Public Health Dashboard</h3>
+                                <div class="project-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Tableau</span>
+                                    <span class="tag">Public Health</span>
+                                </div>
+                                <p class="project-description">Interactive dashboard analyzing health outcomes across different demographics</p>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i data-lucide="github"></i></a>
+                                    <a href="#" class="project-link"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="AI ethics research" />
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">AI Ethics in Healthcare</h3>
+                                <div class="project-tags">
+                                    <span class="tag">NLP</span>
+                                    <span class="tag">Ethics</span>
+                                    <span class="tag">Research</span>
+                                </div>
+                                <p class="project-description">Research on algorithmic fairness in medical AI systems</p>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i data-lucide="file-text"></i></a>
+                                    <a href="#" class="project-link"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop" alt="Mobility analysis" />
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Urban Mobility Analysis</h3>
+                                <div class="project-tags">
+                                    <span class="tag">GIS</span>
+                                    <span class="tag">R</span>
+                                    <span class="tag">Transportation</span>
+                                </div>
+                                <p class="project-description">Geospatial analysis of urban transportation patterns and accessibility</p>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i data-lucide="github"></i></a>
+                                    <a href="#" class="project-link"><i data-lucide="map"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest Writing -->
+                <div class="writing-section">
+                    <h2 class="section-title">Latest Writing</h2>
+                    <div class="writing-grid">
+                        <article class="writing-card">
+                            <div class="writing-meta">
+                                <time class="writing-date">2024-03-15</time>
+                                <span class="writing-tag">AI Ethics</span>
+                            </div>
+                            <h3 class="writing-title">Algorithmic Fairness in Healthcare AI</h3>
+                            <p class="writing-excerpt">Exploring the challenges and opportunities in ensuring fairness across different patient populations...</p>
+                            <a href="#" class="writing-link">Read more</a>
+                        </article>
+
+                        <article class="writing-card">
+                            <div class="writing-meta">
+                                <time class="writing-date">2024-02-28</time>
+                                <span class="writing-tag">Public Health</span>
+                            </div>
+                            <h3 class="writing-title">Data-Driven Approaches to Health Equity</h3>
+                            <p class="writing-excerpt">How data science can help identify and address health disparities in underserved communities...</p>
+                            <a href="#" class="writing-link">Read more</a>
+                        </article>
+
+                        <article class="writing-card">
+                            <div class="writing-meta">
+                                <time class="writing-date">2024-02-10</time>
+                                <span class="writing-tag">Data Notes</span>
+                            </div>
+                            <h3 class="writing-title">Visualizing Urban Mobility Patterns</h3>
+                            <p class="writing-excerpt">A technical deep-dive into geospatial analysis techniques for transportation data...</p>
+                            <a href="#" class="writing-link">Read more</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section section-projects">
+            <div class="container">
+                <h1 class="page-title">Projects</h1>
+                
+                <div class="filters">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search projects..." class="search-input" id="project-search">
+                        <i data-lucide="search" class="search-icon"></i>
+                    </div>
+                    <div class="filter-tags">
+                        <button class="filter-tag active" data-filter="all">All</button>
+                        <button class="filter-tag" data-filter="data-science">Data Science</button>
+                        <button class="filter-tag" data-filter="public-health">Public Health</button>
+                        <button class="filter-tag" data-filter="dashboard">Dashboard</button>
+                        <button class="filter-tag" data-filter="nlp">NLP</button>
+                        <button class="filter-tag" data-filter="gis">GIS</button>
+                    </div>
+                </div>
+
+                <div class="projects-container">
+                    <div class="project-card" data-categories="data-science public-health dashboard">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Public Health Dashboard" />
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">Public Health Dashboard</h3>
+                                <span class="project-year">2024 | Course Project</span>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Tableau</span>
+                                <span class="tag">Public Health</span>
+                            </div>
+                            <p class="project-description">Interactive dashboard analyzing health outcomes across different demographics, featuring real-time data visualization and predictive modeling capabilities.</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="GitHub Repository">
+                                    <i data-lucide="github"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Live Demo">
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Report">
+                                    <i data-lucide="file-text"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-categories="nlp data-science">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="AI Ethics Research" />
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">AI Ethics in Healthcare</h3>
+                                <span class="project-year">2023 | Research</span>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">NLP</span>
+                                <span class="tag">Ethics</span>
+                                <span class="tag">Research</span>
+                            </div>
+                            <p class="project-description">Comprehensive research on algorithmic fairness in medical AI systems, including bias detection and mitigation strategies.</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="Research Paper">
+                                    <i data-lucide="file-text"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Presentation">
+                                    <i data-lucide="presentation"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-categories="gis data-science">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop" alt="Urban Mobility Analysis" />
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">Urban Mobility Analysis</h3>
+                                <span class="project-year">2023 | Independent</span>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">GIS</span>
+                                <span class="tag">R</span>
+                                <span class="tag">Transportation</span>
+                            </div>
+                            <p class="project-description">Geospatial analysis of urban transportation patterns and accessibility, using machine learning to predict mobility trends.</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="GitHub Repository">
+                                    <i data-lucide="github"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Interactive Map">
+                                    <i data-lucide="map"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section section-experience">
+            <div class="container">
+                <h1 class="page-title">Experience</h1>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="experience-header">
+                                <div class="experience-logo">
+                                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=60&fit=crop" alt="Research Institute Logo" />
+                                </div>
+                                <div class="experience-info">
+                                    <h3 class="experience-title">Research Assistant</h3>
+                                    <p class="experience-company">Public Health Research Institute</p>
+                                    <p class="experience-period">Jun 2023 - Present</p>
+                                    <p class="experience-location">Boston, MA</p>
+                                </div>
+                            </div>
+                            <div class="experience-details">
+                                <ul class="experience-bullets">
+                                    <li>Developed predictive models that improved health outcome predictions by 27% using Python and scikit-learn</li>
+                                    <li>Analyzed longitudinal health data for 10,000+ patients, identifying key risk factors for chronic diseases</li>
+                                    <li>Created interactive dashboards in Tableau, reducing report generation time by 40%</li>
+                                    <li>Collaborated with epidemiologists to design and implement data collection protocols</li>
+                                    <li>Published findings in 2 peer-reviewed journals with 150+ citations</li>
+                                </ul>
+                                <div class="experience-skills">
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">R</span>
+                                    <span class="skill-tag">SQL</span>
+                                    <span class="skill-tag">Tableau</span>
+                                    <span class="skill-tag">Machine Learning</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="experience-header">
+                                <div class="experience-logo">
+                                    <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?w=60&h=60&fit=crop" alt="Healthcare Startup Logo" />
+                                </div>
+                                <div class="experience-info">
+                                    <h3 class="experience-title">Data Science Intern</h3>
+                                    <p class="experience-company">HealthTech Startup</p>
+                                    <p class="experience-period">Jan 2023 - May 2023</p>
+                                    <p class="experience-location">San Francisco, CA</p>
+                                </div>
+                            </div>
+                            <div class="experience-details">
+                                <ul class="experience-bullets">
+                                    <li>Built NLP models to process 50,000+ medical records, achieving 92% accuracy in symptom extraction</li>
+                                    <li>Designed A/B testing framework that increased user engagement by 35%</li>
+                                    <li>Implemented real-time data pipelines using Apache Kafka and PostgreSQL</li>
+                                    <li>Created automated reporting system, saving 20 hours/week of manual work</li>
+                                </ul>
+                                <div class="experience-skills">
+                                    <span class="skill-tag">NLP</span>
+                                    <span class="skill-tag">Apache Kafka</span>
+                                    <span class="skill-tag">PostgreSQL</span>
+                                    <span class="skill-tag">Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="experience-header">
+                                <div class="experience-logo">
+                                    <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=60&h=60&fit=crop" alt="University Logo" />
+                                </div>
+                                <div class="experience-info">
+                                    <h3 class="experience-title">Teaching Assistant</h3>
+                                    <p class="experience-company">University Data Science Program</p>
+                                    <p class="experience-period">Sep 2022 - Dec 2022</p>
+                                    <p class="experience-location">Boston, MA</p>
+                                </div>
+                            </div>
+                            <div class="experience-details">
+                                <ul class="experience-bullets">
+                                    <li>Mentored 40+ students in statistical analysis and machine learning concepts</li>
+                                    <li>Developed course materials and assignments, improving student satisfaction by 25%</li>
+                                    <li>Led weekly lab sessions on data visualization and statistical modeling</li>
+                                </ul>
+                                <div class="experience-skills">
+                                    <span class="skill-tag">Teaching</span>
+                                    <span class="skill-tag">Statistics</span>
+                                    <span class="skill-tag">Data Visualization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Writing Section -->
+        <section id="writing" class="section section-writing">
+            <div class="container">
+                <h1 class="page-title">Writing</h1>
+                
+                <div class="writing-filters">
+                    <button class="filter-tag active" data-filter="all">All</button>
+                    <button class="filter-tag" data-filter="ai-ethics">AI Ethics</button>
+                    <button class="filter-tag" data-filter="public-health">Public Health</button>
+                    <button class="filter-tag" data-filter="data-notes">Data Notes</button>
+                    <button class="filter-tag" data-filter="travel">Travel</button>
+                </div>
+
+                <div class="writing-list">
+                    <article class="writing-item" data-category="ai-ethics">
+                        <div class="writing-image">
+                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=300&h=200&fit=crop" alt="AI Ethics article cover" />
+                        </div>
+                        <div class="writing-content">
+                            <div class="writing-meta">
+                                <time class="writing-date">March 15, 2024</time>
+                                <span class="reading-time">8 min read</span>
+                                <span class="writing-tag">AI Ethics</span>
+                            </div>
+                            <h2 class="writing-title">Algorithmic Fairness in Healthcare AI</h2>
+                            <p class="writing-excerpt">
+                                Exploring the challenges and opportunities in ensuring fairness across different patient populations. 
+                                This piece examines current bias detection methods and proposes new frameworks for equitable AI deployment in healthcare settings.
+                            </p>
+                            <a href="#" class="writing-link">Read full article</a>
+                        </div>
+                    </article>
+
+                    <article class="writing-item" data-category="public-health">
+                        <div class="writing-image">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=200&fit=crop" alt="Public Health article cover" />
+                        </div>
+                        <div class="writing-content">
+                            <div class="writing-meta">
+                                <time class="writing-date">February 28, 2024</time>
+                                <span class="reading-time">12 min read</span>
+                                <span class="writing-tag">Public Health</span>
+                            </div>
+                            <h2 class="writing-title">Data-Driven Approaches to Health Equity</h2>
+                            <p class="writing-excerpt">
+                                How data science can help identify and address health disparities in underserved communities. 
+                                A comprehensive analysis of current methodologies and their real-world applications.
+                            </p>
+                            <a href="#" class="writing-link">Read full article</a>
+                        </div>
+                    </article>
+
+                    <article class="writing-item" data-category="data-notes">
+                        <div class="writing-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=200&fit=crop" alt="Data visualization article cover" />
+                        </div>
+                        <div class="writing-content">
+                            <div class="writing-meta">
+                                <time class="writing-date">February 10, 2024</time>
+                                <span class="reading-time">6 min read</span>
+                                <span class="writing-tag">Data Notes</span>
+                            </div>
+                            <h2 class="writing-title">Visualizing Urban Mobility Patterns</h2>
+                            <p class="writing-excerpt">
+                                A technical deep-dive into geospatial analysis techniques for transportation data. 
+                                Learn about the tools and methods used to understand city-wide movement patterns.
+                            </p>
+                            <a href="#" class="writing-link">Read full article</a>
+                        </div>
+                    </article>
+
+                    <article class="writing-item" data-category="travel">
+                        <div class="writing-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" alt="Travel article cover" />
+                        </div>
+                        <div class="writing-content">
+                            <div class="writing-meta">
+                                <time class="writing-date">January 20, 2024</time>
+                                <span class="reading-time">5 min read</span>
+                                <span class="writing-tag">Travel</span>
+                            </div>
+                            <h2 class="writing-title">Research Reflections from Geneva</h2>
+                            <p class="writing-excerpt">
+                                Personal reflections on attending international health conferences and the intersection of global health policy with data science research.
+                            </p>
+                            <a href="#" class="writing-link">Read full article</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="section section-resume">
+            <div class="container">
+                <h1 class="page-title">Resume</h1>
+                
+                <div class="resume-controls">
+                    <div class="language-toggle">
+                        <button class="lang-btn active" data-lang="en">English</button>
+                        <button class="lang-btn" data-lang="cn">中文</button>
+                    </div>
+                    <div class="resume-actions">
+                        <button class="btn btn-secondary" id="view-resume">
+                            <i data-lucide="eye"></i>
+                            View PDF
+                        </button>
+                        <button class="btn btn-primary" id="download-resume">
+                            <i data-lucide="download"></i>
+                            Download
+                        </button>
+                    </div>
+                </div>
+
+                <div class="resume-content" id="resume-en">
+                    <div class="resume-header">
+                        <div class="resume-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Joe Yaochen" />
+                        </div>
+                        <div class="resume-info">
+                            <h2 class="resume-name">Joe Yaochen</h2>
+                            <p class="resume-title">Data Science Student | Public Health Researcher</p>
+                            <div class="resume-contact">
+                                <span><i data-lucide="mail"></i> joe.yaochen@email.com</span>
+                                <span><i data-lucide="phone"></i> +1 (555) 123-4567</span>
+                                <span><i data-lucide="map-pin"></i> Boston, MA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3 class="resume-section-title">Education</h3>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h4>Master of Science in Data Science</h4>
+                                <span class="resume-date">2022 - 2024</span>
+                            </div>
+                            <p class="resume-institution">Harvard University, Boston, MA</p>
+                            <p class="resume-details">Concentration in Public Health Analytics | GPA: 3.9/4.0</p>
+                        </div>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h4>Bachelor of Science in Statistics</h4>
+                                <span class="resume-date">2018 - 2022</span>
+                            </div>
+                            <p class="resume-institution">University of California, Berkeley, CA</p>
+                            <p class="resume-details">Magna Cum Laude | Phi Beta Kappa</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3 class="resume-section-title">Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Programming Languages</h4>
+                                <div class="skill-items">
+                                    <span class="skill-item">Python</span>
+                                    <span class="skill-item">R</span>
+                                    <span class="skill-item">SQL</span>
+                                    <span class="skill-item">JavaScript</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Tools & Frameworks</h4>
+                                <div class="skill-items">
+                                    <span class="skill-item">Tableau</span>
+                                    <span class="skill-item">Apache Kafka</span>
+                                    <span class="skill-item">Docker</span>
+                                    <span class="skill-item">Git</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Specializations</h4>
+                                <div class="skill-items">
+                                    <span class="skill-item">Machine Learning</span>
+                                    <span class="skill-item">NLP</span>
+                                    <span class="skill-item">GIS</span>
+                                    <span class="skill-item">Statistical Modeling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3 class="resume-section-title">Awards & Recognition</h3>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h4>Outstanding Graduate Research Award</h4>
+                                <span class="resume-date">2024</span>
+                            </div>
+                            <p class="resume-institution">Harvard School of Public Health</p>
+                        </div>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h4>Best Paper Award - AI Ethics Conference</h4>
+                                <span class="resume-date">2023</span>
+                            </div>
+                            <p class="resume-institution">International Conference on AI Ethics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume-content hidden" id="resume-cn">
+                    <div class="resume-header">
+                        <div class="resume-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Joe Yaochen" />
+                        </div>
+                        <div class="resume-info">
+                            <h2 class="resume-name">姚晨 (Joe)</h2>
+                            <p class="resume-title">数据科学学生 | 公共卫生研究员</p>
+                            <div class="resume-contact">
+                                <span><i data-lucide="mail"></i> joe.yaochen@email.com</span>
+                                <span><i data-lucide="phone"></i> +1 (555) 123-4567</span>
+                                <span><i data-lucide="map-pin"></i> 波士顿, 马萨诸塞州</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3 class="resume-section-title">教育背景</h3>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h4>数据科学硕士</h4>
+                                <span class="resume-date">2022 - 2024</span>
+                            </div>
+                            <p class="resume-institution">哈佛大学，波士顿，马萨诸塞州</p>
+                            <p class="resume-details">专业方向：公共健康分析 | GPA: 3.9/4.0</p>
+                        </div>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h4>统计学学士</h4>
+                                <span class="resume-date">2018 - 2022</span>
+                            </div>
+                            <p class="resume-institution">加州大学伯克利分校，加利福尼亚州</p>
+                            <p class="resume-details">优等毕业 | Phi Beta Kappa 荣誉学会</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3 class="resume-section-title">专业技能</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>编程语言</h4>
+                                <div class="skill-items">
+                                    <span class="skill-item">Python</span>
+                                    <span class="skill-item">R</span>
+                                    <span class="skill-item">SQL</span>
+                                    <span class="skill-item">JavaScript</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>工具框架</h4>
+                                <div class="skill-items">
+                                    <span class="skill-item">Tableau</span>
+                                    <span class="skill-item">Apache Kafka</span>
+                                    <span class="skill-item">Docker</span>
+                                    <span class="skill-item">Git</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>专业领域</h4>
+                                <div class="skill-items">
+                                    <span class="skill-item">机器学习</span>
+                                    <span class="skill-item">自然语言处理</span>
+                                    <span class="skill-item">地理信息系统</span>
+                                    <span class="skill-item">统计建模</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3 class="resume-section-title">奖项荣誉</h3>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h4>杰出研究生研究奖</h4>
+                                <span class="resume-date">2024</span>
+                            </div>
+                            <p class="resume-institution">哈佛公共卫生学院</p>
+                        </div>
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <h4>AI伦理会议最佳论文奖</h4>
+                                <span class="resume-date">2023</span>
+                            </div>
+                            <p class="resume-institution">国际AI伦理会议</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume-pdf-notice">
+                    <p><i data-lucide="info"></i> 完整简历PDF版本包含更多详细信息和项目经历</p>
+                    <p class="update-date">最后更新：2024年3月</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section section-about">
+            <div class="container">
+                <h1 class="page-title">About Me</h1>
+                
+                <div class="about-content">
+                    <div class="about-intro">
+                        <div class="about-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Joe Yaochen" />
+                        </div>
+                        <div class="about-text">
+                            <h2>Hello, I'm Joe</h2>
+                            <p class="about-description">
+                                I'm a passionate data science graduate student with a deep interest in public health and AI ethics. 
+                                My work focuses on using data-driven approaches to address health disparities and ensure fairness in AI systems.
+                            </p>
+                            <p class="about-description">
+                                Currently pursuing my Master's in Data Science at Harvard University, I combine technical expertise 
+                                with a strong commitment to social impact. I believe that data science has the power to create positive 
+                                change in healthcare and society at large.
+                            </p>
+                            <p class="about-description">
+                                When I'm not analyzing data or writing code, you can find me exploring new cities, reading about 
+                                policy and ethics, or working on photography projects that capture the intersection of technology and humanity.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skills-matrix">
+                        <h3>Technical Expertise</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-level">Advanced</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span class="skill-name">R</span>
+                                    <span class="skill-level">Advanced</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span class="skill-name">SQL</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span class="skill-name">Machine Learning</span>
+                                    <span class="skill-level">Advanced</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span class="skill-name">Data Visualization</span>
+                                    <span class="skill-level">Advanced</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span class="skill-name">GIS</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-section">
+                        <h3>Get In Touch</h3>
+                        <div class="contact-grid">
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i data-lucide="mail"></i>
+                                    <div>
+                                        <h4>Email</h4>
+                                        <p>joe.yaochen@email.com</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i data-lucide="map-pin"></i>
+                                    <div>
+                                        <h4>Location</h4>
+                                        <p>Boston, MA</p>
+                                    </div>
+                                </div>
+                                <div class="social-links">
+                                    <a href="#" class="social-link" title="LinkedIn">
+                                        <i data-lucide="linkedin"></i>
+                                    </a>
+                                    <a href="#" class="social-link" title="GitHub">
+                                        <i data-lucide="github"></i>
+                                    </a>
+                                    <a href="#" class="social-link" title="Twitter">
+                                        <i data-lucide="twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-link" title="Instagram">
+                                        <i data-lucide="instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <form class="contact-form" id="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-loading hidden">
+                                        <i data-lucide="loader-2"></i>
+                                        Sending...
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Joe Yaochen</h3>
+                    <p>Data Science × Public Health</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">首页</a>
+                    <a href="#projects">项目</a>
+                    <a href="#experience">经历</a>
+                    <a href="#writing">写作</a>
+                    <a href="#resume">简历</a>
+                    <a href="#about">关于</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i data-lucide="linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" title="GitHub">
+                        <i data-lucide="github"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Twitter">
+                        <i data-lucide="twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Instagram">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Joe Yaochen. All rights reserved.</p>
+                <p class="footer-love">Made with ❤️ in Boston</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i data-lucide="check-circle" class="toast-icon"></i>
+            <span class="toast-message">Message sent successfully!</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
