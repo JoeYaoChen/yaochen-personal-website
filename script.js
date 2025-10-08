@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize all components
     initNavigation();
+    initLanguageSwitch();
     initCarousel();
     initFilters();
     initScrollEffects();
@@ -893,4 +894,55 @@ if ('serviceWorker' in navigator) {
                 console.log('ServiceWorker registration failed');
             });
     });
+}
+
+// ===== LANGUAGE SWITCH =====
+function initLanguageSwitch() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const elementsWithLang = document.querySelectorAll('[data-zh][data-en]');
+    
+    // Get saved language or default to English
+    let currentLang = localStorage.getItem('preferred-language') || 'en';
+    
+    // Set initial language
+    setLanguage(currentLang);
+    
+    // Add click listeners to language buttons
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const newLang = this.getAttribute('data-lang');
+            if (newLang !== currentLang) {
+                currentLang = newLang;
+                setLanguage(currentLang);
+                localStorage.setItem('preferred-language', currentLang);
+            }
+        });
+    });
+    
+    function setLanguage(lang) {
+        // Update button states
+        langButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        
+        // Update text content
+        elementsWithLang.forEach(element => {
+            const text = element.getAttribute(`data-${lang}`);
+            if (text) {
+                element.textContent = text;
+            }
+        });
+        
+        // Update document language attribute
+        document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        
+        // Update page title
+        const titleMap = {
+            'zh': 'Joe Yaochen - 数据科学 × 公共卫生',
+            'en': 'Joe Yaochen - Data Science × Public Health'
+        };
+        document.title = titleMap[lang];
+        
+        console.log(`Language switched to: ${lang}`);
+    }
 }

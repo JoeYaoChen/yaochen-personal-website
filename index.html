@@ -42,12 +42,16 @@
                 <span class="logo-text">Joe</span>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active" data-section="home">首页</a>
-                <a href="#projects" class="nav-link" data-section="projects">项目</a>
-                <a href="#experience" class="nav-link" data-section="experience">经历</a>
-                <a href="#writing" class="nav-link" data-section="writing">写作</a>
-                <a href="#resume" class="nav-link" data-section="resume">简历</a>
-                <a href="#about" class="nav-link" data-section="about">关于</a>
+                <a href="#home" class="nav-link active" data-section="home" data-zh="首页" data-en="Home">Home</a>
+                <a href="#projects" class="nav-link" data-section="projects" data-zh="项目" data-en="Projects">Projects</a>
+                <a href="#experience" class="nav-link" data-section="experience" data-zh="经历" data-en="Experience">Experience</a>
+                <a href="#writing" class="nav-link" data-section="writing" data-zh="写作" data-en="Writing">Writing</a>
+                <a href="#resume" class="nav-link" data-section="resume" data-zh="简历" data-en="Resume">Resume</a>
+                <a href="#about" class="nav-link" data-section="about" data-zh="关于" data-en="About">About</a>
+            </div>
+            <div class="lang-switch" id="lang-switch">
+                <button class="lang-btn" data-lang="zh">中</button>
+                <button class="lang-btn active" data-lang="en">EN</button>
             </div>
             <div class="nav-toggle" id="nav-toggle">
                 <span></span>
@@ -64,14 +68,14 @@
             <div class="container">
                 <div class="hero">
                     <div class="hero-content">
-                        <h1 class="hero-title">Hi, I'm Joe</h1>
-                        <p class="hero-subtitle">Data Science × Public Health</p>
-                        <p class="hero-description">
+                        <h1 class="hero-title" data-zh="你好，我是Joe" data-en="Hi, I'm Joe">Hi, I'm Joe</h1>
+                        <p class="hero-subtitle" data-zh="数据科学 × 公共卫生" data-en="Data Science × Public Health">Data Science × Public Health</p>
+                        <p class="hero-description" data-zh="我专注于构建数据驱动的项目，并撰写关于公平性、流动性和健康的文章。" data-en="I build data-driven projects and write about fairness, mobility, and health.">
                             I build data-driven projects and write about fairness, mobility, and health.
                         </p>
                         <div class="hero-buttons">
-                            <button class="btn btn-primary" data-section="projects">View Projects</button>
-                            <button class="btn btn-secondary" data-section="resume">Download Resume</button>
+                            <button class="btn btn-primary" data-section="projects" data-zh="查看项目" data-en="View Projects">View Projects</button>
+                            <button class="btn btn-secondary" data-section="resume" data-zh="下载简历" data-en="Download Resume">Download Resume</button>
                         </div>
                     </div>
                     <div class="hero-carousel">
@@ -108,7 +112,7 @@
 
                 <!-- Featured Projects -->
                 <div class="featured-section">
-                    <h2 class="section-title">Featured Projects</h2>
+                    <h2 class="section-title" data-zh="精选项目" data-en="Featured Projects">Featured Projects</h2>
                     <div class="projects-grid">
                         <div class="project-card">
                             <div class="project-image">
@@ -170,8 +174,8 @@
                 </div>
 
                 <!-- Latest Writing -->
-                <div class="writing-section">
-                    <h2 class="section-title">Latest Writing</h2>
+                        <div class="writing-section">
+                    <h2 class="section-title" data-zh="最新文章" data-en="Latest Writing">Latest Writing</h2>
                     <div class="writing-grid">
                         <article class="writing-card">
                             <div class="writing-meta">
@@ -210,7 +214,7 @@
         <!-- Projects Section -->
         <section id="projects" class="section section-projects">
             <div class="container">
-                <h1 class="page-title">Projects</h1>
+                <h1 class="page-title" data-zh="项目作品" data-en="Projects">Projects</h1>
                 
                 <div class="filters">
                     <div class="search-box">
@@ -315,7 +319,7 @@
         <!-- Experience Section -->
         <section id="experience" class="section section-experience">
             <div class="container">
-                <h1 class="page-title">Experience</h1>
+                <h1 class="page-title" data-zh="工作经历" data-en="Experience">Experience</h1>
                 
                 <div class="timeline">
                     <div class="timeline-item">
@@ -417,7 +421,7 @@
         <!-- Writing Section -->
         <section id="writing" class="section section-writing">
             <div class="container">
-                <h1 class="page-title">Writing</h1>
+                <h1 class="page-title" data-zh="写作文章" data-en="Writing">Writing</h1>
                 
                 <div class="writing-filters">
                     <button class="filter-tag active" data-filter="all">All</button>
@@ -509,7 +513,7 @@
         <!-- Resume Section -->
         <section id="resume" class="section section-resume">
             <div class="container">
-                <h1 class="page-title">Resume</h1>
+                <h1 class="page-title" data-zh="个人简历" data-en="Resume">Resume</h1>
                 
                 <div class="resume-controls">
                     <div class="language-toggle">
@@ -714,7 +718,7 @@
         <!-- About Section -->
         <section id="about" class="section section-about">
             <div class="container">
-                <h1 class="page-title">About Me</h1>
+                <h1 class="page-title" data-zh="关于我" data-en="About Me">About Me</h1>
                 
                 <div class="about-content">
                     <div class="about-intro">
