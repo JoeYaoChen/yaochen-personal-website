@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
     initSmoothScrolling();
     initAnimations();
-    
+    initTypedText();
+
     console.log('Personal website initialized successfully');
 });
 
@@ -101,17 +102,12 @@ function initNavigation() {
     }
     
     // Scroll effects for navigation
-    let lastScrollY = 0;
     window.addEventListener('scroll', function() {
-        const currentScrollY = window.scrollY;
-        
-        if (currentScrollY > 80) {
+        if (window.scrollY > 80) {
             nav.classList.add('scrolled');
         } else {
             nav.classList.remove('scrolled');
         }
-        
-        lastScrollY = currentScrollY;
     });
 }
 
@@ -807,7 +803,7 @@ document.addEventListener('keydown', function(e) {
 function initLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
     
-    const imageObserver = new IntersectionObserver((entries, observer) => {
+    const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
@@ -887,10 +883,10 @@ document.addEventListener('click', function(e) {
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
+            .then(function() {
                 console.log('ServiceWorker registration successful');
             })
-            .catch(function(err) {
+            .catch(function() {
                 console.log('ServiceWorker registration failed');
             });
     });
@@ -938,11 +934,72 @@ function initLanguageSwitch() {
         
         // Update page title
         const titleMap = {
-            'zh': 'Joe Yaochen - 数据科学 × 公共卫生',
-            'en': 'Joe Yaochen - Data Science × Public Health'
+            'zh': '张曜晨',
+            'en': 'Yaochen Zhang'
         };
         document.title = titleMap[lang];
         
         console.log(`Language switched to: ${lang}`);
     }
+}
+
+// ===== TYPED TEXT ANIMATION =====
+function initTypedText() {
+    const el = document.getElementById('typed-text');
+    if (!el) return;
+
+    const phrases = {
+        en: ['Data Analyst', 'AI Engineer', 'Python Developer', 'Fast Learner', 'Problem Solver'],
+        zh: ['数据分析师', 'AI 工程师', 'Python 开发者', '快速学习者', '问题解决者']
+    };
+
+    let index = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let timeout;
+
+    function getLang() {
+        return localStorage.getItem('preferred-language') || 'en';
+    }
+
+    function type() {
+        const lang = getLang();
+        const currentPhrases = phrases[lang];
+        const currentPhrase = currentPhrases[index % currentPhrases.length];
+
+        if (isDeleting) {
+            charIndex--;
+        } else {
+            charIndex++;
+        }
+
+        el.textContent = currentPhrase.substring(0, charIndex);
+
+        let delay = isDeleting ? 45 : 80;
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            delay = 2200;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            index = (index + 1) % currentPhrases.length;
+            delay = 400;
+        }
+
+        timeout = setTimeout(type, delay);
+    }
+
+    type();
+
+    // Restart from the top when language switches
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            clearTimeout(timeout);
+            charIndex = 0;
+            isDeleting = false;
+            index = 0;
+            el.textContent = '';
+            setTimeout(type, 500);
+        });
+    });
 }
